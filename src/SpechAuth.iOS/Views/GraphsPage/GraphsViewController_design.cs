@@ -95,6 +95,8 @@ namespace SpechAuth.iOS.Views.GraphsPage
 
             _sourceGraph.Title = "";
             _transformGraph.Title = "";
+
+            _lineColor = CPTColor.WhiteColor;
         }
 
         void SetupGraph (ref CPTXYGraph graph)
