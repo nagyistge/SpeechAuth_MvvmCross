@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{FECBA8F0-864B-4D1B-B147-85B15D23E491}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>SpechAuth.iOS</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>SpechAuth.iOS</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>i386</MtouchArch>
+    <MtouchLink>None</MtouchLink>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchProfiling>true</MtouchProfiling>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchArch>i386</MtouchArch>
+    <ConsolePause>false</ConsolePause>
+    <MtouchLink>None</MtouchLink>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchProfiling>true</MtouchProfiling>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchDebug>true</MtouchDebug>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Developer</CodesignKey>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Ad-Hoc</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <IpaIncludeArtwork>true</IpaIncludeArtwork>
+    <CodesignKey>iPhone Distribution</CodesignKey>
+    <CodesignProvision>Automatic:AdHoc</CodesignProvision>
+    <BuildIpa>true</BuildIpa>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|iPhone' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\AppStore</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <CodesignProvision>Automatic:AppStore</CodesignProvision>
+    <CodesignKey>iPhone Distribution</CodesignKey>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="CorePlotiOS">
+      <HintPath>..\..\lib\CorePlotiOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.CrossCore.Touch">
+      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.5.1\lib\Xamarin.iOS10\Cirrious.CrossCore.Touch.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Binding.Touch">
+      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.5.1\lib\Xamarin.iOS10\Cirrious.MvvmCross.Binding.Touch.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.CrossCore">
+      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.5.1\lib\Xamarin.iOS10\Cirrious.CrossCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Binding">
+      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.5.1\lib\Xamarin.iOS10\Cirrious.MvvmCross.Binding.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Localization">
+      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.5.1\lib\Xamarin.iOS10\Cirrious.MvvmCross.Localization.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Touch">
+      <HintPath>..\packages\MvvmCross.HotTuna.MvvmCrossLibraries.3.5.1\lib\Xamarin.iOS10\Cirrious.MvvmCross.Touch.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross">
+      <HintPath>..\packages\MvvmCross.HotTuna.MvvmCrossLibraries.3.5.1\lib\Xamarin.iOS10\Cirrious.MvvmCross.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.Messenger">
+      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.Messenger.3.5.1\lib\Xamarin.iOS10\Cirrious.MvvmCross.Plugins.Messenger.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.Sqlite">
+      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.Sqlite.3.5.1\lib\Xamarin.iOS10\Cirrious.MvvmCross.Plugins.Sqlite.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.Sqlite.Touch">
+      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.Sqlite.3.5.1\lib\Xamarin.iOS10\Cirrious.MvvmCross.Plugins.Sqlite.Touch.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\180 - iPhone 6 Plus180.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\120 - iPhone120.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\120x120.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\80 - Spotlight80.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\8787.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\58x58.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="Resources\LaunchScreen.xib" />
+    <InterfaceDefinition Include="Views\ProfilesPage\ProfileCell.xib" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+    <None Include="Entitlements.plist" />
+    <None Include="packages.config" />
+    <None Include="ToDo-MvvmCross\_ Touch UI.txt" />
+    <None Include="AppDelegate.cs.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="Theme\ImageHelper.cs" />
+    <Compile Include="Theme\Theme_Appearance.cs" />
+    <Compile Include="Theme\Theme_Button.cs" />
+    <Compile Include="Theme\Theme_Color.cs" />
+    <Compile Include="Theme\Theme_Font.cs" />
+    <Compile Include="Theme\Theme_Label.cs" />
+    <Compile Include="UIExtentions\UIViewControllerExtentionMethods.cs" />
+    <Compile Include="Views\ProfilesPage\ProfilesViewController.cs" />
+    <Compile Include="Views\ProfilesPage\ProfilesViewController_design.cs" />
+    <Compile Include="Views\UserCreationPage\UserCreationViewController.cs" />
+    <Compile Include="Views\UserCreationPage\UserCreationViewController_design.cs" />
+    <Compile Include="Views\RecordSoundPage\RecordSoundViewController.cs" />
+    <Compile Include="Views\RecordSoundPage\RecordSoundViewController_design.cs" />
+    <Compile Include="Views\RecordSoundPage\UIStepIndicators.cs" />
+    <Compile Include="Views\ResultPage\ResultViewController.cs" />
+    <Compile Include="Views\ResultPage\ResultViewController_design.cs" />
+    <Compile Include="Views\GraphsPage\GraphsViewController.cs" />
+    <Compile Include="Views\GraphsPage\GraphsViewController_design.cs" />
+    <Compile Include="UIExtentions\StackPanel.cs" />
+    <Compile Include="UIExtentions\StackPanelAligment.cs" />
+    <Compile Include="UIExtentions\StackPanelOrientation.cs" />
+    <Compile Include="Views\GraphsPage\SourceDataSource.cs" />
+    <Compile Include="Views\GraphsPage\TransformDataSource.cs" />
+    <Compile Include="Setup.cs" />
+    <Compile Include="DebugTrace.cs" />
+    <Compile Include="LinkerPleaseInclude.cs" />
+    <Compile Include="Bootstrap\MessengerPluginBootstrap.cs" />
+    <Compile Include="CustomSpeechAuthPresenter.cs" />
+    <Compile Include="Bootstrap\SqlitePluginBootstrap.cs" />
+    <Compile Include="Views\ProfilesPage\ProfileCell.cs" />
+    <Compile Include="Views\ProfilesPage\ProfileCell.designer.cs">
+      <DependentUpon>ProfileCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RecordSoundPage\Controllers\UIStepIndicatorsWithListBinder.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <ItemGroup>
+    <BundleResource Include="Images\AddButtonIcon.png" />
+    <BundleResource Include="Images\AddButtonIcon%402x.png" />
+    <BundleResource Include="Images\AddButtonIcon%403x.png" />
+    <BundleResource Include="Images\AuthButtonIcon.png" />
+    <BundleResource Include="Images\AuthButtonIcon%402x.png" />
+    <BundleResource Include="Images\AuthButtonIcon%403x.png" />
+    <BundleResource Include="Images\Error.png" />
+    <BundleResource Include="Images\Error%402x.png" />
+    <BundleResource Include="Images\Error%403x.png" />
+    <BundleResource Include="Images\IndicatorFill.png" />
+    <BundleResource Include="Images\IndicatorFill%402x.png" />
+    <BundleResource Include="Images\IndicatorFill%403x.png" />
+    <BundleResource Include="Images\IndicatorStroke.png" />
+    <BundleResource Include="Images\IndicatorStroke%402x.png" />
+    <BundleResource Include="Images\IndicatorStroke%403x.png" />
+    <BundleResource Include="Images\InputIcon.png" />
+    <BundleResource Include="Images\InputIcon%402x.png" />
+    <BundleResource Include="Images\InputIcon%403x.png" />
+    <BundleResource Include="Images\MicrophoneIcon.png" />
+    <BundleResource Include="Images\MicrophoneIcon%402x.png" />
+    <BundleResource Include="Images\MicrophoneIcon%403x.png" />
+    <BundleResource Include="Images\Success.png" />
+    <BundleResource Include="Images\Success%402x.png" />
+    <BundleResource Include="Images\Success%403x.png" />
+    <BundleResource Include="Images\BlueButtonBackground.png" />
+    <BundleResource Include="Images\BlueButtonBackground%402x.png" />
+    <BundleResource Include="Images\BlueButtonBackground%403x.png" />
+    <BundleResource Include="Images\Animation\1.png" />
+    <BundleResource Include="Images\Animation\10.png" />
+    <BundleResource Include="Images\Animation\10%402x.png" />
+    <BundleResource Include="Images\Animation\10%403x.png" />
+    <BundleResource Include="Images\Animation\11.png" />
+    <BundleResource Include="Images\Animation\11%402x.png" />
+    <BundleResource Include="Images\Animation\11%403x.png" />
+    <BundleResource Include="Images\Animation\12.png" />
+    <BundleResource Include="Images\Animation\12%402x.png" />
+    <BundleResource Include="Images\Animation\12%403x.png" />
+    <BundleResource Include="Images\Animation\13.png" />
+    <BundleResource Include="Images\Animation\13%402x.png" />
+    <BundleResource Include="Images\Animation\13%403x.png" />
+    <BundleResource Include="Images\Animation\14.png" />
+    <BundleResource Include="Images\Animation\14%402x.png" />
+    <BundleResource Include="Images\Animation\14%403x.png" />
+    <BundleResource Include="Images\Animation\15.png" />
+    <BundleResource Include="Images\Animation\15%402x.png" />
+    <BundleResource Include="Images\Animation\15%403x.png" />
+    <BundleResource Include="Images\Animation\16.png" />
+    <BundleResource Include="Images\Animation\16%402x.png" />
+    <BundleResource Include="Images\Animation\16%403x.png" />
+    <BundleResource Include="Images\Animation\17.png" />
+    <BundleResource Include="Images\Animation\17%402x.png" />
+    <BundleResource Include="Images\Animation\17%403x.png" />
+    <BundleResource Include="Images\Animation\18.png" />
+    <BundleResource Include="Images\Animation\18%402x.png" />
+    <BundleResource Include="Images\Animation\18%403x.png" />
+    <BundleResource Include="Images\Animation\19.png" />
+    <BundleResource Include="Images\Animation\19%402x.png" />
+    <BundleResource Include="Images\Animation\19%403x.png" />
+    <BundleResource Include="Images\Animation\1%402x.png" />
+    <BundleResource Include="Images\Animation\1%403x.png" />
+    <BundleResource Include="Images\Animation\2.png" />
+    <BundleResource Include="Images\Animation\20.png" />
+    <BundleResource Include="Images\Animation\20%402x.png" />
+    <BundleResource Include="Images\Animation\20%403x.png" />
+    <BundleResource Include="Images\Animation\21.png" />
+    <BundleResource Include="Images\Animation\21%402x.png" />
+    <BundleResource Include="Images\Animation\21%403x.png" />
+    <BundleResource Include="Images\Animation\22.png" />
+    <BundleResource Include="Images\Animation\22%402x.png" />
+    <BundleResource Include="Images\Animation\22%403x.png" />
+    <BundleResource Include="Images\Animation\23.png" />
+    <BundleResource Include="Images\Animation\23%402x.png" />
+    <BundleResource Include="Images\Animation\23%403x.png" />
+    <BundleResource Include="Images\Animation\24.png" />
+    <BundleResource Include="Images\Animation\24%402x.png" />
+    <BundleResource Include="Images\Animation\24%403x.png" />
+    <BundleResource Include="Images\Animation\2%402x.png" />
+    <BundleResource Include="Images\Animation\2%403x.png" />
+    <BundleResource Include="Images\Animation\3.png" />
+    <BundleResource Include="Images\Animation\3%402x.png" />
+    <BundleResource Include="Images\Animation\3%403x.png" />
+    <BundleResource Include="Images\Animation\4.png" />
+    <BundleResource Include="Images\Animation\4%402x.png" />
+    <BundleResource Include="Images\Animation\4%403x.png" />
+    <BundleResource Include="Images\Animation\5.png" />
+    <BundleResource Include="Images\Animation\5%402x.png" />
+    <BundleResource Include="Images\Animation\5%403x.png" />
+    <BundleResource Include="Images\Animation\6.png" />
+    <BundleResource Include="Images\Animation\6%402x.png" />
+    <BundleResource Include="Images\Animation\6%403x.png" />
+    <BundleResource Include="Images\Animation\7.png" />
+    <BundleResource Include="Images\Animation\7%402x.png" />
+    <BundleResource Include="Images\Animation\7%403x.png" />
+    <BundleResource Include="Images\Animation\8.png" />
+    <BundleResource Include="Images\Animation\8%402x.png" />
+    <BundleResource Include="Images\Animation\8%403x.png" />
+    <BundleResource Include="Images\Animation\9.png" />
+    <BundleResource Include="Images\Animation\9%402x.png" />
+    <BundleResource Include="Images\Animation\9%403x.png" />
+    <BundleResource Include="Images\AddButtonIcon_Pressed.png" />
+    <BundleResource Include="Images\AddButtonIcon_Pressed%402x.png" />
+    <BundleResource Include="Images\AddButtonIcon_Pressed%403x.png" />
+    <BundleResource Include="Images\AuthButtonIcon_Pressed.png" />
+    <BundleResource Include="Images\AuthButtonIcon_Pressed%402x.png" />
+    <BundleResource Include="Images\AuthButtonIcon_Pressed%403x.png" />
+    <BundleResource Include="Images\BlueButtonBackground_Pressed.png" />
+    <BundleResource Include="Images\BlueButtonBackground_Pressed%402x.png" />
+    <BundleResource Include="Images\BlueButtonBackground_Pressed%403x.png" />
+    <BundleResource Include="Images\FourierButtonIcon_Pressed.png" />
+    <BundleResource Include="Images\FourierButtonIcon_Pressed%402x.png" />
+    <BundleResource Include="Images\FourierButtonIcon_Pressed%403x.png" />
+    <BundleResource Include="Images\FourierButtonIcon.png" />
+    <BundleResource Include="Images\FourierButtonIcon%402x.png" />
+    <BundleResource Include="Images\FourierButtonIcon%403x.png" />
+    <BundleResource Include="Images\WaveletButtonIcon_Pressed.png" />
+    <BundleResource Include="Images\WaveletButtonIcon_Pressed%402x.png" />
+    <BundleResource Include="Images\WaveletButtonIcon_Pressed%403x.png" />
+    <BundleResource Include="Images\WaveletButtonIcon.png" />
+    <BundleResource Include="Images\WaveletButtonIcon%402x.png" />
+    <BundleResource Include="Images\WaveletButtonIcon%403x.png" />
+    <BundleResource Include="Images\CheckFillIcon.png" />
+    <BundleResource Include="Images\CheckFillIcon%402x.png" />
+    <BundleResource Include="Images\CheckFillIcon%403x.png" />
+    <BundleResource Include="Images\CheckStrokeIcon.png" />
+    <BundleResource Include="Images\CheckStrokeIcon%402x.png" />
+    <BundleResource Include="Images\CheckStrokeIcon%403x.png" />
+    <BundleResource Include="Images\DialogBackground.png" />
+    <BundleResource Include="Images\DialogBackground%402x.png" />
+    <BundleResource Include="Images\DialogBackground%403x.png" />
+    <BundleResource Include="Images\GraphIcon.png" />
+    <BundleResource Include="Images\GraphIcon%402x.png" />
+    <BundleResource Include="Images\GraphIcon%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SpeechAuth.Core\SpeechAuth.Core.csproj">
+      <Project>{0059DE1F-DD9F-4833-BCCA-0E454DF29232}</Project>
+      <Name>SpeechAuth.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\UserCreationPage\" />
+    <Folder Include="Views\RecordSoundPage\" />
+    <Folder Include="Views\ResultPage\" />
+    <Folder Include="Views\RecordSoundPage\Controllers\" />
+    <Folder Include="Images\Animation\" />
+    <Folder Include="Views\GraphsPage\" />
+  </ItemGroup>
+</Project>
